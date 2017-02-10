@@ -1,6 +1,6 @@
 echo "Creating Premission"
 sudo groupadd www
-sudo usermod -a -G www sreeji
+sudo usermod -a -G www $USER
 sudo chown -R root:www /var/www
 sudo chmod 2775 /var/www
 find /var/www -type d -exec sudo chmod 2775 {} \;
