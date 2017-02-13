@@ -12,6 +12,8 @@ server_doc_path="/var/www/html/$vhost/public_html"
 server_doc_path_escape="\/var\/www\/html\/$vhost\/public_html"
 echo "Creating host folders $server_doc_path"
 mkdir -p $server_doc_path
+sudo chown -R www-data:www-data $server_doc_path
+sudo chmod -R 755 /var/www/html/
 sed -ie "s/server_email/$server_email/g" $vhost_path
 sed -ie "s/server_name/$server_name/g" $vhost_path
 sed -ie "s/server_alias/$server_alias/g" $vhost_path
